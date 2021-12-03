@@ -1,25 +1,39 @@
-## The Golden Rule: 
+## HTML ELEMENTS
+ - 10 elements needed
+  - three drop downs (possibly surrounded in divs to display:flex?)
+    Why? to choose options to display
+    How? 'dropDown.addEventListener('change', () => {})'
+          'dropDown.value' to get the selected images
+  - three images
+    Why? to display the selected option
+    How? 'myImg.src = 'whatever.jpg'
+  - an input area
+    Why? to allow user to type their city slogan
+    How?
+      * const slogan = myInput.value
+      * 'myArray.push(slogan)
+  - a submit button
+    Why? to submit the slogan
+    How? 'button.addEventListener('click', () =>)
+  - empty div to inject slogans
+    Why? a place to hold the city slogans
+    How? use the 'display a list" pattern from lecture
+  - a div for timesChanged count
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## Events
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+on change of any dropdown
+  - the corresponding image will change
+    * get the value from the dropdown element
+    * use that value to change the correct image tag's '.src'
+  - the count of that dropdown will change
+    * timesChanged++ 
+    * change the DOM to update the new count
 
-## Making a plan
-
-1) **Make a drawing of your app. Simple "wireframes"**
-1) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1) **For each HTML element ask: Why do I need this?** 
-1) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1) **Think about how to validate each of your features according to a Definition of Done**
-1) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
-
-Additional considerations:
-- Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
-- Consider your data model. 
-  - What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need? 
-  - What are the key/value pairs? 
-  - What arrays might you need? 
-  - What needs to live in a persistence layer?
-- Is there some state we need to initialize?
-- Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+on button click
+ - get the slogan from the input.value
+ - push the slogan to our array of slogans
+ - update the DOM
+  * clear out the old Slogans from the DOM (immutable)
+  * loop through the slogan array
+  * append each slogan

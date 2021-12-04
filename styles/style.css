@@ -110,7 +110,8 @@ img {
     height: 250px;
     width: 300px;
     margin: 10px;
-    border-style: solid 5px var(--old-burgundy);
+    border: solid 5px var(--old-burgundy);
+    border-radius: 10px;
 }
 
 .container {
@@ -132,7 +133,17 @@ input {
 }
 
 button {
+    background-color: transparent;
+    border: solid 3px var(--old-burgundy);
+    color: var(--queen-pink);
     cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--old-burgundy);
+    color: var(--queen-pink);
+    border: solid 3px var(--mountbatten-pink);
+    
 }
 
 label {

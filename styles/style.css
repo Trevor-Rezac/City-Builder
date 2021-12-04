@@ -110,7 +110,8 @@ img {
     height: 250px;
     width: 300px;
     margin: 10px;
-    border-style: solid 5px var(--old-burgundy);
+    border: solid 5px var(--old-burgundy);
+    border-radius: 10px;
 }
 
 .container {

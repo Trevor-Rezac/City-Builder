@@ -11,6 +11,9 @@ const sloganInput = document.querySelector('#slogan-input');
 const sloganButton = document.querySelector('#slogan-button');
 const sloganList = document.querySelector('#slogan-list');
 const countEl = document.querySelector('#count');
+const nameChangeBtn = document.querySelector('#name-change-btn');
+const nameChangeInput = document.querySelector('#name-change-input');
+const cityWelcome = document.querySelector('#city-welcome');
 
 // let state
 
@@ -19,6 +22,7 @@ let sloganArr = [];
 let skylineCount = 0;
 let waterfrontCount = 0;
 let castleCount = 0;
+let cityName = '';
 
 // set event listeners 
   // get user input
@@ -46,8 +50,13 @@ castleDropdown.addEventListener('change', () => {
     displayStats();
 });
 
+
 sloganButton.addEventListener('click', () => {
     displaySlogans();
+});
+
+nameChangeBtn.addEventListener('click', () => {
+    changeCityName();
 });
 
 function displayStats() {
@@ -61,8 +70,37 @@ function displaySlogans() {
     for (let slogan of sloganArr) {
         const p = document.createElement('p');
         p.classList.add('slogan');
-        p.textContent = slogan;
+        p.textContent = (cityName.value === '') ? slogan : `${cityName} - "${slogan}"`;
         sloganList.append(p);
     }
     sloganInput.value = '';
 }
+
+function changeCityName() {
+    cityName = nameChangeInput.value;
+    cityWelcome.textContent = `Welcome to ${cityName}!`;
+    nameChangeInput.value = '';
+}
+
+// function disableBtn() {
+//     if (sloganInput.value === '') {
+//         sloganButton.disabled = true;
+//     } else {
+//         sloganButton.disabled = false;
+//     }
+// }
+
+// function enableBtn() {
+//     if (sloganInput.value.length > 0) {
+//         sloganButton.disabled = false;
+//     }
+// }
+
+// const skylineArr = [];
+// const waterfrontArr = [];
+// const castleArr = [];
+
+// function getRandomItem(arr) {
+//     return Math.floor(Math.random() * arr.length);
+// }
+

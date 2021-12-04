@@ -7,6 +7,12 @@ body {
     --color3: white;
     --color4: white;
     --color5: white;
+
+    --mountbatten-pink: #957186ff;
+    --queen-pink: #d9b8c4ff;
+    --old-mauve: #703d57ff;
+    --old-burgundy: #402a2cff;
+    --smoky-black: #241715ff;
     
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         
@@ -28,7 +34,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color: var(--smoky-black);
 }
 
 main {
@@ -37,6 +43,8 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: var(--smoky-black);
+    color: var(--queen-pink);
 }
 
 section {
@@ -55,24 +63,21 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
+    text-align: center;
+    background-color: var(--old-burgundy);
+    color: var(--mountbatten-pink);
 }
 
 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
+
 
 .gutter-right {
     margin-right: 20px;
-}
-
-header img {
-    height: var(--header-height);
 }
 
 p {
@@ -97,13 +102,15 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: var(--smoky-black);
+    border: solid 0px var(--smoky-black);
 }
 
 img {
     height: 250px;
     width: 300px;
     margin: 10px;
-    border-style: none;
+    border-style: solid 5px var(--old-burgundy);
 }
 
 .container {
@@ -114,4 +121,20 @@ img {
 
 .slogans {
     margin: 10px;
+}
+
+input {
+    text-align: center;
+}
+
+.name-change {
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+label {
+    color: var(--queen-pink);
 }
